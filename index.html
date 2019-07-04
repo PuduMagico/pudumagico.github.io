@@ -36,10 +36,11 @@
     async defer></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
+      var io = require('socket.io')(app);
       var socket = io('wss://integracion-tarea-4.herokuapp.com/flights');
       socket.on('POSITION', function (data) {
         console.log(data);
-        
+
       });
     </script>
   </body>
