@@ -1,5 +1,6 @@
 
-AIzaSyCwyXR3bfXkeoQtShkMR1KJ5qRVE_jA2FU
+/*AIzaSyCwyXR3bfXkeoQtShkMR1KJ5qRVE_jA2FU}
+*/
 <!DOCTYPE html>
 <html>
   <head>
@@ -33,5 +34,13 @@ AIzaSyCwyXR3bfXkeoQtShkMR1KJ5qRVE_jA2FU
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwyXR3bfXkeoQtShkMR1KJ5qRVE_jA2FU&callback=initMap"
     async defer></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io('wss://integracion-tarea-4.herokuapp.com/flights');
+      socket.on('POSITION', function (data) {
+        console.log(data);
+        
+      });
+    </script>
   </body>
 </html>
