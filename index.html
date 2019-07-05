@@ -113,7 +113,6 @@
             dict[code] = value;
           }
 
-          console.log(dict);
 
           if (dict[code][1].length == 0) {
             var coordinates = {lat: position[0], lng: position[1]};
@@ -139,7 +138,6 @@
 
             dict[code][1].pop();
             dict[code][0].push(past_plane);
-            console.log("hola", dict[code][0].length);
             var airplane = new google.maps.Circle({
                 strokeColor: '#000000',
                 strokeOpacity: 1,
