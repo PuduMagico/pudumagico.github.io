@@ -58,9 +58,7 @@
       console.log("airports", payload);
       var aeropuertos = Object.entries(payload);
       for (i = 0; i < aeropuertos.length; i++) {
-        console.log(aeropuertos[i]);
         var aeropuerto = Object.entries(aeropuertos[i][1]);
-        console.log(aeropuerto[5][1]);
         var coordinates = {lat: aeropuerto[5][1][0], lng: aeropuerto[5][1][1]};
 
         var airportCircle = new google.maps.Circle({
@@ -83,7 +81,7 @@
         var aux = Object.entries(payload[i]);
         var origin = aux.origin;
         var dest = aux.destination;
-        console.log(origin)
+        console.log("origin", origin)
 
       }
     });
