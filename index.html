@@ -19,6 +19,23 @@
   </style>
 </head>
 
+
+  <body>
+  <div id="map"></div>
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -33.5, lng: -70.5},
+        zoom: 8
+      });
+    }
+
+
+
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBNdLIn5HdqhIb4ETbmBnzzrLjWlJ1wuQ&callback=initMap"
+  async defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
   <script>
     const socket = io('integracion-tarea-4.herokuapp.com', {
@@ -47,9 +64,16 @@
         console.log(aeropuertos[i]);
         var aeropuerto = Object.entries(aeropuertos[i][1]);
         console.log(aeropuerto[5][1]);
-        console.log(aeropuerto[0][5][1]);
-        console.log(aeropuerto[1]);
-        console.log(aeropuerto.airport_position);
+        var airportCircle = new google.maps.Circle({
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35,
+            map: map,
+            center: aeropuerto[5][1],
+          });
+
       }
     });
 
@@ -57,22 +81,6 @@
       console.log("flights", payload);
     });
   </script>
-  <body>
-  <div id="map"></div>
-  <script>
-    var map;
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -33.5, lng: -70.5},
-        zoom: 8
-      });
-    }
-
-
-
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBNdLIn5HdqhIb4ETbmBnzzrLjWlJ1wuQ&callback=initMap"
-  async defer></script>
 </body>
 
 </html>
