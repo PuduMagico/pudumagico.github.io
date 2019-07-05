@@ -26,7 +26,7 @@
     });
 
     socket.emit('AIRPORTS');
-    socket.emit('PLANES');
+    socket.emit('FLIGHTS');
 
     socket.on('connect', () => {
       console.log('connected');
@@ -37,7 +37,7 @@
     })
 
     socket.on('POSITION', ({ code, position }) => {
-
+      console.log("airports", code, position);
     });
 
     socket.on('AIRPORTS', payload => {
