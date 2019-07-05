@@ -79,12 +79,11 @@
 
       console.log("flights", payload);
       for (i = 0; i < payload.length; i++) {
-        var aux = Object.entries(payload[i]);
 
         var origin = payload[i].origin.airport_position;
-        console.log("ori", origin)
+        console.log("ori", origin);
         var dest = payload[i].destination.airport_position;
-        console.log("dest", dest)
+        console.log("dest", dest);
         var origin_coordinates = {lat: payload[i].origin.airport_position[0], lng: payload[i].origin.airport_position[1]};
         var dest_coordinates = {lat: destination.airport_position[0], lng: destination.airport_position[1]};
 
