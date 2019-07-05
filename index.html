@@ -64,6 +64,8 @@
         console.log(aeropuertos[i]);
         var aeropuerto = Object.entries(aeropuertos[i][1]);
         console.log(aeropuerto[5][1]);
+        var coordinates = {lat: aeropuerto[5][1][0], lng: aeropuerto[5][1][1]};
+
         var airportCircle = new google.maps.Circle({
             strokeColor: '#FF0000',
             strokeOpacity: 0.8,
@@ -71,7 +73,7 @@
             fillColor: '#FF0000',
             fillOpacity: 0.35,
             map: map,
-            center: aeropuerto[5][1],
+            center: coordinates,
           });
 
       }
