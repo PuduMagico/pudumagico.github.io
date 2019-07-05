@@ -34,7 +34,7 @@
 
     socket.on('disconnect', () => {
       console.log('disconnected');
-    })
+    });
 
     socket.on('POSITION', ({ code, position }) => {
 <!--      console.log("position", code, position); -->
@@ -42,7 +42,11 @@
 
     socket.on('AIRPORTS', payload => {
       console.log("airports", payload);
-    })
+      var aeropuertos = payload.entries();
+      for (i = 0; i < aeropuertos.length; i++) {
+        console.log(aeropuertos[i]);
+      }
+    });
 
     socket.on('FLIGHTS', payload => {
       console.log("flights", payload);
