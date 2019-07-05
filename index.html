@@ -62,6 +62,7 @@
       for (i = 0; i < payload.length; i++) {
 
         var origin = payload[i].origin.airport_position;
+        console.log("ori", origin);
         var dest = payload[i].destination.airport_position;
         var origin_coordinates = {lat: origin[0], lng: origin[1]};
         var dest_coordinates = {lat: dest[0], lng: dest[1]};
@@ -112,7 +113,7 @@
           if (Object.keys(dict).indexOf(code) == -1){
             var past_pos = [];
             var actual_pos = [];
-            var value = [past_post, actual_post]
+            var value = [past_pos, actual_pos]
             dict[code] = value;
           }
 
