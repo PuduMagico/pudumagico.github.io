@@ -131,8 +131,6 @@
                 center: coordinates,
                 radius: 5000,
               });
-              console.log("plane success");
-              console.log(dict[code][1]);
               dict[code][1].push(airplane);
           }
           else {
@@ -141,6 +139,7 @@
             past_plane.fillColor = "#FFFF00";
             dict[code][1].pop();
             dict[code][0].push(past_plane);
+            console.log("hola", dict[code][0].length);
             var airplane = new google.maps.Circle({
                 strokeColor: '#000000',
                 strokeOpacity: 1,
