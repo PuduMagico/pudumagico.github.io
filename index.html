@@ -132,8 +132,11 @@
           else {
             var coordinates = {lat: position[0], lng: position[1]};
             var past_plane = dict[code][1][0];
-            past_plane.strokeColor = "#FFFF00";
-            past_plane.fillColor = "#FFFF00";
+            past_plane.setOptions({
+                        fillColor: '#FFFF00',
+                        strokeColor: '#FFFF00'
+                    });
+
             dict[code][1].pop();
             dict[code][0].push(past_plane);
             console.log("hola", dict[code][0].length);
