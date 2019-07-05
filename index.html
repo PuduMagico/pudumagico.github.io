@@ -82,8 +82,8 @@
         console.log(i);
         var aux = Object.entries(payload[i]);
         console.log(aux);
-        var origin = payload[i].origin;
-        var dest = payload[i].destination;
+        var origin = payload[i].origin.airport_position;
+        var dest = payload[i].destination.airport_position;
         console.log("origin", origin)
 
       }
