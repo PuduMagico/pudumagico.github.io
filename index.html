@@ -27,7 +27,7 @@
     function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -33.5, lng: -70.5},
-        zoom: 5
+        zoom: 6
       });
     }
 
@@ -110,6 +110,16 @@
 
     socket.on('POSITION', ({ code, position }) => {
 <!--      console.log("position", code, position); -->
+          var dict = {};
+
+          if (Object.keys(dict).indexOf(code) == -1){
+            var past_pos = [];
+            var actual_pos = [];
+            var value = [past_post, actual_post]
+            dict[code] = value;
+          }
+
+          console.log(dict);
 
     });
 
