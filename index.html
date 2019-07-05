@@ -62,13 +62,11 @@
       for (i = 0; i < payload.length; i++) {
 
         var origin = payload[i].origin.airport_position;
-        console.log("ori", origin);
         var dest = payload[i].destination.airport_position;
         var origin_coordinates = {lat: origin[0], lng: origin[1]};
         var dest_coordinates = {lat: dest[0], lng: dest[1]};
 
         var flightPlanCoordinates = [origin_coordinates, dest_coordinates];
-
 
         var flightPath = new google.maps.Polyline({
           path: flightPlanCoordinates,
@@ -78,7 +76,6 @@
           strokeWeight: 10,
           map: map,
         });
-        console.log("success");
 
 
 
@@ -102,7 +99,6 @@
             center: coordinates,
             radius: 13000,
           });
-        console.log("success");
       }
     });
     var dict = {};
@@ -119,7 +115,7 @@
 
           console.log(dict);
 
-          if (dict[code][0].length == 0) {
+          if (dict[code][1].length == 0) {
             var coordinates = {lat: position[0], lng: position[1]};
             var airplane = new google.maps.Circle({
                 strokeColor: '#000000',
