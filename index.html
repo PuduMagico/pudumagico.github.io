@@ -112,12 +112,28 @@
 
           if (Object.keys(dict).indexOf(code) == -1){
             var past_pos = [];
-            var actual_pos = [];
+            var actual_pos = "x";
             var value = [past_pos, actual_pos]
             dict[code] = value;
           }
 
           console.log(dict);
+
+          if (dict[code][0].length == 0) {
+            var coordinates = {lat: position[0], lng: position[1]};
+            var airplane = new google.maps.Circle({
+                strokeColor: '#FF0000',
+                strokeOpacity: 1,
+                strokeWeight: 2,
+                fillColor: '#ADFF2F',
+                fillOpacity: 0.35,
+                map: map,
+                center: coordinates,
+                radius: 5000,
+              });
+
+          }
+        
 
     });
 
