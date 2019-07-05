@@ -105,10 +105,10 @@
         console.log("success");
       }
     });
-
+    var dict = {};
     socket.on('POSITION', ({ code, position }) => {
 <!--      console.log("position", code, position); -->
-          var dict = {};
+
 
           if (Object.keys(dict).indexOf(code) == -1){
             var past_pos = [];
