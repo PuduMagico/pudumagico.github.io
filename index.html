@@ -106,6 +106,10 @@
 <!--      console.log("position", code, position); -->
 
 
+
+
+
+
           if (Object.keys(dict).indexOf(code) == -1){
             var past_pos = [];
             var actual_pos = [];
@@ -116,16 +120,16 @@
 
           if (dict[code][1].length == 0) {
             var coordinates = {lat: position[0], lng: position[1]};
-            var airplane = new google.maps.Circle({
-                strokeColor: '#FFFF00',
-                strokeOpacity: 1,
-                strokeWeight: 2,
-                fillColor: '#FFFF00',
-                fillOpacity: 0.35,
-                map: map,
-                center: coordinates,
-                radius: 4000,
-              });
+
+            var airplane = new google.maps.Marker({
+              position: coordinates,
+              icon: "http://maps.google.com/mapfiles/kml/paddle/A.png",
+              map: map
+            });
+
+
+
+
               dict[code][1].push(airplane);
           }
           else {
