@@ -54,26 +54,7 @@
     });
 
 
-    socket.on('AIRPORTS', payload => {
-      console.log("airports", payload);
-      var aeropuertos = Object.entries(payload);
-      for (i = 0; i < aeropuertos.length; i++) {
-        var aeropuerto = Object.entries(aeropuertos[i][1]);
-        var coordinates = {lat: aeropuerto[5][1][0], lng: aeropuerto[5][1][1]};
 
-        var airportCircle = new google.maps.Circle({
-            strokeColor: '#FF0000',
-            strokeOpacity: 1,
-            strokeWeight: 2,
-            fillColor: '#FF0000',
-            fillOpacity: 0.35,
-            map: map,
-            center: coordinates,
-            radius: 13000,
-          });
-        console.log("success");
-      }
-    });
 
     socket.on('FLIGHTS', payload => {
 
@@ -103,6 +84,27 @@
 
 
 
+      }
+    });
+
+    socket.on('AIRPORTS', payload => {
+      console.log("airports", payload);
+      var aeropuertos = Object.entries(payload);
+      for (i = 0; i < aeropuertos.length; i++) {
+        var aeropuerto = Object.entries(aeropuertos[i][1]);
+        var coordinates = {lat: aeropuerto[5][1][0], lng: aeropuerto[5][1][1]};
+
+        var airportCircle = new google.maps.Circle({
+            strokeColor: '#FF0000',
+            strokeOpacity: 1,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35,
+            map: map,
+            center: coordinates,
+            radius: 13000,
+          });
+        console.log("success");
       }
     });
 
