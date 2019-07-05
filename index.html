@@ -84,8 +84,8 @@
         console.log("ori", origin);
         var dest = payload[i].destination.airport_position;
         console.log("dest", dest);
-        var origin_coordinates = {lat: payload[i].origin.airport_position[0], lng: payload[i].origin.airport_position[1]};
-        var dest_coordinates = {lat: destination.airport_position[0], lng: destination.airport_position[1]};
+        var origin_coordinates = {lat: origin[0], lng: origin[1]};
+        var dest_coordinates = {lat: dest[0], lng: dest[1]};
 
         var flightPlanCoordinates = [origin_coordinates, dest_coordinates];
 
