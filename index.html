@@ -124,7 +124,7 @@
                 fillOpacity: 0.35,
                 map: map,
                 center: coordinates,
-                radius: 5000,
+                radius: 4000,
               });
               dict[code][1].push(airplane);
           }
@@ -134,6 +134,7 @@
             past_plane.setOptions({
                         fillColor: '#FFFF00',
                         strokeColor: '#FFFF00'
+                        radius: 4000,
                     });
 
             dict[code][1].pop();
