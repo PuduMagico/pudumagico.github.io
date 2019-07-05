@@ -130,6 +130,7 @@
               dict[code][1].push(airplane);
           }
           else {
+            var coordinates = {lat: position[0], lng: position[1]};
             var past_plane = dict[code][1][0];
             past_plane.strokeColor = "#FFFF00";
             past_plane.fillColor = "#FFFF00";
