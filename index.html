@@ -53,9 +53,6 @@
       console.log('disconnected');
     });
 
-    socket.on('POSITION', ({ code, position }) => {
-<!--      console.log("position", code, position); -->
-    });
 
     socket.on('AIRPORTS', payload => {
       console.log("airports", payload);
@@ -74,7 +71,7 @@
             fillOpacity: 0.35,
             map: map,
             center: coordinates,
-            radius: 1000,
+            radius: 10000,
           });
         console.log("success");
       }
@@ -82,7 +79,21 @@
 
     socket.on('FLIGHTS', payload => {
       console.log("flights", payload);
+      for (i = 0; i < payload.length; i++) {
+        var aux = Object.entries(payload[i]);
+        var origin = aux.origin;
+        var dest = aux.destination;
+        console.log(origin)
+
+      }
     });
+
+    socket.on('POSITION', ({ code, position }) => {
+<!--      console.log("position", code, position); -->
+
+    });
+
+
   </script>
 </body>
 
