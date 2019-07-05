@@ -81,8 +81,9 @@
       for (i = 0; i < payload.length; i++) {
         console.log(i);
         var aux = Object.entries(payload[i]);
-        var origin = aux.origin;
-        var dest = aux.destination;
+        console.log(aux);
+        var origin = payload[i].origin;
+        var dest = payload[i].destination;
         console.log("origin", origin)
 
       }
