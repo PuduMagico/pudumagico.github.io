@@ -122,16 +122,37 @@
           if (dict[code][0].length == 0) {
             var coordinates = {lat: position[0], lng: position[1]};
             var airplane = new google.maps.Circle({
-                strokeColor: '#FF0000',
+                strokeColor: '#000000',
                 strokeOpacity: 1,
                 strokeWeight: 2,
-                fillColor: '#ADFF2F',
+                fillColor: '#000000',
                 fillOpacity: 0.35,
                 map: map,
                 center: coordinates,
                 radius: 5000,
               });
               console.log("plane success");
+              dict[code][1].push(airplane);
+          }
+          else {
+            var past_plane = dict[code][1][0];
+            past_plane.strokeColor = "#FFFF00";
+            past_plane.fillColor = "#FFFF00";
+            dict[code][1].pop();
+            dict[code][0].push(past_plane);
+            var airplane = new google.maps.Circle({
+                strokeColor: '#000000',
+                strokeOpacity: 1,
+                strokeWeight: 2,
+                fillColor: '#000000',
+                fillOpacity: 0.35,
+                map: map,
+                center: coordinates,
+                radius: 5000,
+              });
+
+              dict[code][1].push(airplane);
+
 
           }
 
