@@ -77,30 +77,25 @@
 
     socket.on('FLIGHTS', payload => {
 
-
-
       console.log("flights", payload);
-      console.log(payload.length);
       for (i = 0; i < payload.length; i++) {
-        console.log(i);
         var aux = Object.entries(payload[i]);
-        console.log(aux);
         var origin = payload[i].origin.airport_position;
         var dest = payload[i].destination.airport_position;
-        console.log("origin", origin)
         var origin_coordinates = {lat: payload[i].origin.airport_position[0], lng: payload[i].origin.airport_position[1]};
         var dest_coordinates = {lat: destination.airport_position[0], lng: destination.airport_position[1]};
         var flightPlanCoordinates = [origin_coordinates, dest_coordinates];
-
+        console.log(flightPlanCoordinates);
         var flightPath = new google.maps.Polyline({
           path: flightPlanCoordinates,
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 1000
+          strokeWeight: 1000,
+          map: map,
         });
+        console.log("success");
 
-        flightPath.setMap(map);
 
 
       }
