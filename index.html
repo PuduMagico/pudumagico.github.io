@@ -42,7 +42,7 @@
 
     socket.on('AIRPORTS', payload => {
       console.log("airports", payload);
-      var aeropuertos = payload.entries();
+      var aeropuertos = Object.entries(payload);
       for (i = 0; i < aeropuertos.length; i++) {
         console.log(aeropuertos[i]);
       }
