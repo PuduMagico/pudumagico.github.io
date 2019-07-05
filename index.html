@@ -44,8 +44,9 @@
       console.log("airports", payload);
       var aeropuertos = Object.entries(payload);
       for (i = 0; i < aeropuertos.length; i++) {
+        console.log(aeropuertos[i]);
         var aeropuerto = Object.entries(aeropuertos[i][1]);
-        console.log(aeropuerto[0]);
+        console.log(aeropuerto.airport_position);
       }
     });
 
